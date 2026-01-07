@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.UsersController" spacing="8" stylesheets="@styles.css">
+    <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+    <Label text="Utilisateurs" styleClass="page-title"/>
+    <HBox spacing="8">
+        <TextField fx:id="searchField" promptText="Recherche" HBox.hgrow="ALWAYS"/>
+        <Button text="Ajouter" onAction="#addUser"/>
+    </HBox>
+    <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colUsername" text="Identifiant" prefWidth="240"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="240"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+ 
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.ReservationsController" stylesheets="@styles.css">
+    <top>
+        <ToolBar styleClass="header-bar">
+            <Button text="➕ Réservation" onAction="#newReservation"/>
+            <Separator/>
+            <Label text="📅 Date:"/>
+            <DatePicker fx:id="datePicker"/>
+            <Separator/>
+            <Button text="◀ Précédent" onAction="#previousDay"/>
+            <Button text="Suivant ▶" onAction="#nextDay"/>
+        </ToolBar>
+    </top>
+    <center>
+        <TabPane>
+            <tabs>
+                <Tab text="Liste" closable="false">
+                    <TableView fx:id="table" styleClass="data-table">
+                        <columns>
+                            <TableColumn fx:id="colTerrain" text="Terrain" prefWidth="160"/>
+                            <TableColumn fx:id="colDate" text="Date" prefWidth="120"/>
+                            <TableColumn fx:id="colStart" text="Début" prefWidth="120"/>
+                            <TableColumn fx:id="colDuration" text="Durée" prefWidth="100"/>
+                            <TableColumn fx:id="colPrice" text="Prix (€)" prefWidth="100"/>
+                            <TableColumn fx:id="colClient" text="Client" prefWidth="140"/>
+                            <TableColumn fx:id="colPhone" text="Téléphone" prefWidth="140"/>
+                            <TableColumn fx:id="colStatus" text="Statut" prefWidth="100"/>
+                            <TableColumn fx:id="colActions" text="Actions" prefWidth="220"/>
+                        </columns>
+                    </TableView>
+                </Tab>
+                <Tab text="Calendrier" closable="false">
+                    <ScrollPane fitToWidth="true">
+                        <VBox fx:id="calendar" spacing="8">
+                            <padding><Insets top="10" left="10" right="10" bottom="10"/></padding>
+                        </VBox>
+                    </ScrollPane>
+                </Tab>
+                <Tab text="Semaine" closable="false">
+                    <ScrollPane fitToWidth="true">
+                        <VBox fx:id="weekContainer" spacing="10"/>
+                    </ScrollPane>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.DashboardController" spacing="12" stylesheets="@styles.css">
+    <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+    <HBox spacing="8">
+        <Label text="Dashboard" styleClass="page-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="userInfo"/>
+    </HBox>
+    <GridPane hgap="12" vgap="12">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
+        <children>
+            <TitledPane fx:id="tileTerrainsOccupes" styleClass="tile" text="Terrains occupés" expanded="true" collapsible="false"/>
+            <TitledPane fx:id="tileReservationsJour" styleClass="tile" text="Réservations du jour" expanded="true" collapsible="false" GridPane.columnIndex="1"/>
+            <TitledPane fx:id="tileTerrainsDisponibles" styleClass="tile" text="Terrains disponibles" expanded="true" collapsible="false" GridPane.columnIndex="2"/>
+            <TitledPane fx:id="tileMaintenance" styleClass="tile" text="En maintenance" expanded="true" collapsible="false" GridPane.columnIndex="3"/>
+        </children>
+    </GridPane>
+</VBox>

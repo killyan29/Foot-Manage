@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.HistoryController" spacing="10" stylesheets="@styles.css" styleClass="card">
+    <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+    <Label text="Historique" styleClass="page-title"/>
+    <TabPane>
+        <tabs>
+            <Tab text="Réservations" closable="false">
+                <TableView fx:id="reservationsTable" styleClass="data-table">
+                    <columns>
+                        <TableColumn fx:id="colResDate" text="Date" prefWidth="120"/>
+                        <TableColumn fx:id="colResStart" text="Heure" prefWidth="100"/>
+                        <TableColumn fx:id="colResTerrain" text="Terrain" prefWidth="160"/>
+                        <TableColumn fx:id="colResDuration" text="Durée (min)" prefWidth="120"/>
+                        <TableColumn fx:id="colResClient" text="Client" prefWidth="200"/>
+                        <TableColumn fx:id="colResPhone" text="Téléphone" prefWidth="160"/>
+                        <TableColumn fx:id="colResPrice" text="Prix (€)" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </Tab>
+            <Tab text="Emprunts matériel" closable="false">
+                <TableView fx:id="locationsTable" styleClass="data-table">
+                    <columns>
+                        <TableColumn fx:id="colLocDate" text="Date" prefWidth="120"/>
+                        <TableColumn fx:id="colLocMateriel" text="Matériel" prefWidth="200"/>
+                        <TableColumn fx:id="colLocQuantity" text="Quantité" prefWidth="120"/>
+                        <TableColumn fx:id="colLocReservation" text="Réservation associée" prefWidth="200"/>
+                    </columns>
+                </TableView>
+            </Tab>
+        </tabs>
+    </TabPane>
+</VBox>

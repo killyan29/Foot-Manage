@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+ 
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.LoginController" stylesheets="@styles.css" styleClass="login-background">
+    <center>
+        <VBox alignment="CENTER" spacing="12">
+            <padding><Insets top="60"/></padding>
+            <VBox spacing="12" maxWidth="360" styleClass="login-card">
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Text text="👟 Foot Manage" styleClass="app-title"/>
+                </HBox>
+                <TextField fx:id="usernameField" promptText="Identifiant"/>
+                <PasswordField fx:id="passwordField" promptText="Mot de passe"/>
+                <Label fx:id="errorLabel" styleClass="error"/>
+                <Button fx:id="loginButton" text="🔐 Se connecter" onAction="#login" maxWidth="Infinity" styleClass="accent"/>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

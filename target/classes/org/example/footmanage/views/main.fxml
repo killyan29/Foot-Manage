@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+ 
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.MainController" stylesheets="@styles.css">
+    <top>
+        <ToolBar styleClass="header-bar">
+            <Button text="⛶ Plein écran" onAction="#toggleFullscreen"/>
+            <Separator/>
+            <Button fx:id="logoutBtn" text="🚪 Déconnexion" onAction="#logout"/>
+            <Separator/>
+            <Label fx:id="currentUserLabel" text="👤 Non connecté"/>
+        </ToolBar>
+    </top>
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" spacing="6">
+            <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+            <Label text="Menu" styleClass="sidebar-title"/>
+            <Button styleClass="nav-button" text="🏠 Dashboard" onAction="#showDashboard" maxWidth="Infinity"/>
+            <Button styleClass="nav-button" text="🏟️ Terrains" onAction="#showTerrains" maxWidth="Infinity"/>
+            <Button styleClass="nav-button" text="📅 Réservations" onAction="#showReservations" maxWidth="Infinity"/>
+            <Button styleClass="nav-button" text="🎒 Matériel" onAction="#showMateriel" maxWidth="Infinity"/>
+            <Button styleClass="nav-button" text="🏆 Tournois" onAction="#showTournaments" maxWidth="Infinity"/>
+            <Button fx:id="usersBtn" styleClass="nav-button" text="👤 Utilisateurs" onAction="#showUsers" maxWidth="Infinity"/>
+            <Button styleClass="nav-button" text="🕘 Historique" onAction="#showHistory" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="content"/>
+    </center>
+</BorderPane>

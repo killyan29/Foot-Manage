@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+ 
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.MaterielController" spacing="8" stylesheets="@styles.css">
+    <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+    <Label text="🎒 Matériel" styleClass="page-title"/>
+    <HBox spacing="8">
+        <ComboBox fx:id="typeBox" promptText="Type"/>
+        <Spinner fx:id="stockSpinner" promptText="Stock"/>
+        <Button text="➕ Ajouter" onAction="#add" styleClass="accent"/>
+    </HBox>
+    <TableView fx:id="table" VBox.vgrow="ALWAYS" styleClass="data-table">
+        <columns>
+            <TableColumn fx:id="colType" text="Type" prefWidth="160"/>
+            <TableColumn fx:id="colStock" text="Stock" prefWidth="120"/>
+            <TableColumn fx:id="colBorrowed" text="Empruntés" prefWidth="120"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="160"/>
+        </columns>
+    </TableView>
+</VBox>

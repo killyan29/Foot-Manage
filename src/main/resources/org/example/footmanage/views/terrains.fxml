@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+ 
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.TerrainsController" spacing="8" stylesheets="@styles.css">
+    <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+    <Label text="🏟️ Terrains" styleClass="page-title"/>
+    <HBox spacing="8">
+        <TextField fx:id="searchField" promptText="Recherche" HBox.hgrow="ALWAYS"/>
+        <Button text="➕ Ajouter" onAction="#addTerrain" styleClass="accent"/>
+    </HBox>
+    <TableView fx:id="table" VBox.vgrow="ALWAYS" styleClass="data-table">
+        <columns>
+            <TableColumn fx:id="colName" text="Nom" prefWidth="200"/>
+            <TableColumn fx:id="colStatus" text="Statut" prefWidth="120"/>
+            <TableColumn fx:id="colCapacity" text="Capacité" prefWidth="100"/>
+            <TableColumn fx:id="colDescription" text="Description" prefWidth="300"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="160"/>
+        </columns>
+    </TableView>
+</VBox>

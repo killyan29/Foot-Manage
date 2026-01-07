@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+ 
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.footmanage.controller.TournamentsController" stylesheets="@styles.css">
+    <top>
+        <ToolBar styleClass="header-bar">
+            <Button text="➕ Tournoi" onAction="#addTournament"/>
+            <Separator/>
+            <Label text="Sélection:"/>
+            <ComboBox fx:id="tournamentBox"/>
+        </ToolBar>
+    </top>
+    <center>
+        <TabPane>
+            <tabs>
+                <Tab text="Équipes" closable="false">
+                    <VBox spacing="8">
+                        <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+                        <HBox spacing="8">
+                            <TextField fx:id="teamField" promptText="Nom de l'équipe" HBox.hgrow="ALWAYS"/>
+                            <Button text="➕ Ajouter équipe" onAction="#addTeam" styleClass="accent"/>
+                        </HBox>
+                        <TableView fx:id="teamsTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                            <columns>
+                                <TableColumn fx:id="colTeamName" text="Nom" prefWidth="240"/>
+                                <TableColumn fx:id="colTeamActions" text="Actions" prefWidth="160"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </Tab>
+                <Tab text="Matchs" closable="false">
+                    <VBox spacing="8">
+                        <padding><Insets top="12" left="12" right="12" bottom="12"/></padding>
+                        <HBox spacing="8">
+                            <Label text="Domicile"/>
+                            <ComboBox fx:id="homeTeamBox"/>
+                            <Label text="Extérieur"/>
+                            <ComboBox fx:id="awayTeamBox"/>
+                            <Label text="Date"/>
+                            <DatePicker fx:id="matchDate"/>
+                            <Label text="Heure"/>
+                            <TextField fx:id="matchTime" promptText="HH:mm"/>
+                            <Button text="➕ Ajouter match" onAction="#addMatch" styleClass="accent"/>
+                        </HBox>
+                        <TableView fx:id="matchesTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                            <columns>
+                                <TableColumn fx:id="colMatchDate" text="Date" prefWidth="120"/>
+                                <TableColumn fx:id="colMatchTime" text="Heure" prefWidth="100"/>
+                                <TableColumn fx:id="colMatchHome" text="Domicile" prefWidth="200"/>
+                                <TableColumn fx:id="colMatchAway" text="Extérieur" prefWidth="200"/>
+                                <TableColumn fx:id="colMatchScore" text="Score" prefWidth="120"/>
+                                <TableColumn fx:id="colMatchActions" text="Actions" prefWidth="160"/>
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
